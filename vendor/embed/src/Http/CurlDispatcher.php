@@ -17,6 +17,11 @@ class CurlDispatcher implements DispatcherInterface
         'jpeg' => 'image/jpeg',
         'gif' => 'image/gif',
         'png' => 'image/png',
+        'mp3' => 'audio/mpeg',
+        'mp4' => 'video/mp4',
+        'ogg' => 'audio/ogg',
+        'ogv' => 'video/ogg',
+        'webm' => 'video/webm',
     ];
 
     private $config = [
@@ -91,7 +96,7 @@ class CurlDispatcher implements DispatcherInterface
         if (!empty($extension) && isset(self::$acceptHeaders[$extension])) {
             $options[CURLOPT_HTTPHEADER] = ['Accept: '.self::$acceptHeaders[$extension]];
         } else {
-            $options[CURLOPT_HTTPHEADER] = ['Accept: text/html'];
+            $options[CURLOPT_HTTPHEADER] = ['Accept: */*'];
         }
 
         $response = $this->exec($url, $options);
