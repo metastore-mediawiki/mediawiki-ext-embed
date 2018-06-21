@@ -5,9 +5,7 @@ namespace MediaWiki\Extension\MW_EXT_Embed;
 require_once( __DIR__ . '/vendor/embed/src/autoloader.php' );
 
 use Embed\Embed;
-use OutputPage;
-use Parser;
-use Skin;
+use OutputPage, Parser, Skin;
 
 /**
  * Class MW_EXT_Embed
