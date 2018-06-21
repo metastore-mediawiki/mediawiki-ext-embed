@@ -1,8 +1,13 @@
 <?php
 
+namespace MediaWiki\Extension\MW_EXT_Embed;
+
 require_once( __DIR__ . '/vendor/embed/src/autoloader.php' );
 
 use Embed\Embed;
+use OutputPage;
+use Parser;
+use Skin;
 
 /**
  * Class MW_EXT_Embed
@@ -43,7 +48,7 @@ class MW_EXT_Embed {
 	 * @param Parser $parser
 	 *
 	 * @return bool
-	 * @throws MWException
+	 * @throws \MWException
 	 * -------------------------------------------------------------------------------------------------------------- */
 
 	public static function onParserFirstCallInit( Parser $parser ) {
@@ -72,7 +77,7 @@ class MW_EXT_Embed {
 		if ( empty( $outURL ) ) {
 			$parser->addTrackingCategory( 'mw-ext-embed-error-category' );
 
-			return false;
+			return null;
 		}
 
 		// Get URL data.
@@ -125,8 +130,8 @@ class MW_EXT_Embed {
 	 * -------------------------------------------------------------------------------------------------------------- */
 
 	public static function onBeforePageDisplay( OutputPage $out, Skin $skin ) {
-		$out->addModuleStyles( array( 'ext.mw.embed.styles' ) );
-		$out->addModules( array( 'ext.mw.embed' ) );
+		$out->addModuleStyles( [ 'ext.mw.embed.styles' ] );
+		$out->addModules( [ 'ext.mw.embed' ] );
 
 		return true;
 	}

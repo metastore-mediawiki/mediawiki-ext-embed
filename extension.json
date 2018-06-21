@@ -14,14 +14,14 @@
 		"MediaWiki": ">= 1.30.0"
 	},
 	"AutoloadClasses": {
-		"MW_EXT_Embed": "MW_EXT_Embed.class.php"
+		"MediaWiki\\Extension\\MW_EXT_Embed\\MW_EXT_Embed": "MW_EXT_Embed.class.php"
 	},
 	"Hooks": {
 		"ParserFirstCallInit": [
-			"MW_EXT_Embed::onParserFirstCallInit"
+			"MediaWiki\\Extension\\MW_EXT_Embed\\MW_EXT_Embed::onParserFirstCallInit"
 		],
 		"BeforePageDisplay": [
-			"MW_EXT_Embed::onBeforePageDisplay"
+			"MediaWiki\\Extension\\MW_EXT_Embed\\MW_EXT_Embed::onBeforePageDisplay"
 		]
 	},
 	"ExtensionMessagesFiles": {
