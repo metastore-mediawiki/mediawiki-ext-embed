@@ -33,16 +33,6 @@
 		]
 	},
 	"ResourceModules": {
-		"ext.mw.embed": {
-			"scripts": [
-				"scripts/main.min.js"
-			],
-			"position": "bottom",
-			"targets": [
-				"desktop",
-				"mobile"
-			]
-		},
 		"ext.mw.embed.styles": {
 			"styles": [
 				"styles/theme.css"

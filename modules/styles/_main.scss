@@ -1,5 +1,7 @@
 .mw-ext-embed {
-	.mw-ext-embed-content {
-		display: inline-block;
+	.mw-ext-embed {
+		&-content {
+			display: inline-block;
+		}
 	}
 }
