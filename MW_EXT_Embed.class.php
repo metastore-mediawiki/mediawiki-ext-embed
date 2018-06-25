@@ -54,7 +54,7 @@ class MW_EXT_Embed {
 		$outData = $getData->code;
 
 		// Out HTML.
-		$outHTML = '<div class="mw-ext-embed"><div class="mw-ext-embed-body"><div class="mw-ext-embed-content">' . $outData . '</div></div></div>';
+		$outHTML = '<div class="mw-ext-embed navigation-not-searchable"><div class="mw-ext-embed-body"><div class="mw-ext-embed-content">' . $outData . '</div></div></div>';
 
 		// Out parser.
 		$outParser = $parser->insertStripItem( $outHTML, $parser->mStripState );
