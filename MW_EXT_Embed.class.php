@@ -23,7 +23,7 @@ class MW_EXT_Embed {
 	 * -------------------------------------------------------------------------------------------------------------- */
 
 	public static function onParserFirstCallInit( Parser $parser ) {
-		$parser->setFunctionHook( 'embed', __CLASS__ . '::onRenderTag' );
+		$parser->setFunctionHook( 'embed', [ __CLASS__, 'onRenderTag' ] );
 
 		return true;
 	}
@@ -38,7 +38,7 @@ class MW_EXT_Embed {
 	 * -------------------------------------------------------------------------------------------------------------- */
 
 	public static function onRenderTag( Parser $parser, $url = '' ) {
-		// Argument: URL.
+		// Argument: url.
 		$getURL = MW_EXT_Core::outClear( $url ?? '' ?: '' );
 		$outURL = $getURL;
 
