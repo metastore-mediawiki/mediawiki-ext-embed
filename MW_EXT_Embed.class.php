@@ -10,7 +10,7 @@ use MediaWiki\Extension\MW_EXT_Core\MW_EXT_Core;
 
 /**
  * Class MW_EXT_Embed
- * ------------------------------------------------------------------------------------------------------------------ */
+ */
 class MW_EXT_Embed {
 
 	/**
@@ -20,8 +20,7 @@ class MW_EXT_Embed {
 	 *
 	 * @return bool
 	 * @throws \MWException
-	 * -------------------------------------------------------------------------------------------------------------- */
-
+	 */
 	public static function onParserFirstCallInit( Parser $parser ) {
 		$parser->setFunctionHook( 'embed', [ __CLASS__, 'onRenderTag' ] );
 
@@ -35,8 +34,7 @@ class MW_EXT_Embed {
 	 * @param string $url
 	 *
 	 * @return bool|string
-	 * -------------------------------------------------------------------------------------------------------------- */
-
+	 */
 	public static function onRenderTag( Parser $parser, $url = '' ) {
 		// Argument: url.
 		$getURL = MW_EXT_Core::outClear( $url ?? '' ?: '' );
@@ -69,8 +67,7 @@ class MW_EXT_Embed {
 	 * @param Skin $skin
 	 *
 	 * @return bool
-	 * -------------------------------------------------------------------------------------------------------------- */
-
+	 */
 	public static function onBeforePageDisplay( OutputPage $out, Skin $skin ) {
 		$out->addModuleStyles( [ 'ext.mw.embed.styles' ] );
 
