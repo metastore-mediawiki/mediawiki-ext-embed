@@ -1,12 +1,11 @@
 <?php
 
-namespace MediaWiki\Extension\MW_EXT_Embed;
+namespace MediaWiki\Extension\METADATA;
 
 require_once( __DIR__ . '/vendor/embed/src/autoloader.php' );
 
 use OutputPage, Parser, Skin;
 use Embed\Embed;
-use MediaWiki\Extension\MW_EXT_Kernel\MW_EXT_Kernel;
 
 /**
  * Class MW_EXT_Embed

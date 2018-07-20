@@ -5,6 +5,8 @@
 	"license": "GPL-3.0-or-later",
 	"homepage": "https://metastore.pro",
 	"keywords": [
+		"metadata",
+		"metastore",
 		"mediawiki",
 		"embed"
 	],
@@ -25,12 +27,17 @@
 	},
 	"require": {
 		"composer/installers": "~1.0",
-		"metastore/mediawiki-ext-kernel": "*"
+		"metastore/mediawiki-ext-kernel": "*",
+		"embed/embed": "*"
 	},
 	"autoload": {
 		"classmap": [
 			"MW_EXT_Embed.class.php"
 		]
+	},
+	"config": {
+		"optimize-autoloader": true,
+		"prepend-autoloader": false
 	},
 	"extra": {
 		"installer-name": "MW_EXT_Embed"
