@@ -6,7 +6,7 @@ require_once( __DIR__ . '/vendor/embed/src/autoloader.php' );
 
 use OutputPage, Parser, Skin;
 use Embed\Embed;
-use MediaWiki\Extension\MW_EXT_Core\MW_EXT_Core;
+use MediaWiki\Extension\MW_EXT_Kernel\MW_EXT_Kernel;
 
 /**
  * Class MW_EXT_Embed
@@ -37,7 +37,7 @@ class MW_EXT_Embed {
 	 */
 	public static function onRenderTag( Parser $parser, $url = '' ) {
 		// Argument: url.
-		$getURL = MW_EXT_Core::outClear( $url ?? '' ?: '' );
+		$getURL = MW_EXT_Kernel::outClear( $url ?? '' ?: '' );
 		$outURL = $getURL;
 
 		// Check URL.
