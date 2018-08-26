@@ -1,6 +1,6 @@
 <?php
 
-namespace MediaWiki\Extension\METADATA;
+namespace MediaWiki\Extension\MetaStore;
 
 require_once( __DIR__ . '/vendor/embed/src/autoloader.php' );
 
