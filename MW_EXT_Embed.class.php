@@ -2,10 +2,11 @@
 
 namespace MediaWiki\Extension\MetaStore;
 
-require_once( __DIR__ . '/vendor/embed/src/autoloader.php' );
+require_once( __DIR__ . '/vendor/autoload.php' );
 
 use OutputPage, Parser, Skin;
 use Embed\Embed;
+use Embed\Http\CurlDispatcher;
 
 /**
  * Class MW_EXT_Embed
@@ -46,8 +47,21 @@ class MW_EXT_Embed {
 			return null;
 		}
 
+		$dispatcher = new CurlDispatcher( [
+			CURLOPT_MAXREDIRS      => 10,
+			CURLOPT_CONNECTTIMEOUT => 10,
+			CURLOPT_TIMEOUT        => 10,
+			CURLOPT_SSL_VERIFYHOST => 0,
+			CURLOPT_SSL_VERIFYPEER => false,
+			CURLOPT_ENCODING       => '',
+			CURLOPT_AUTOREFERER    => true,
+			CURLOPT_FOLLOWLOCATION => true,
+			CURLOPT_USERAGENT      => 'Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:61.0) Gecko/20100101 Firefox/61.0',
+			CURLOPT_IPRESOLVE      => CURL_IPRESOLVE_V4,
+		] );
+
 		// Get URL data.
-		$getData = Embed::create( $outURL );
+		$getData = Embed::create( $outURL, null, $dispatcher );
 		$outData = $getData->code;
 
 		// Out HTML.
