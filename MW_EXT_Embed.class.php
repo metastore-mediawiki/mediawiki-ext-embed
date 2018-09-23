@@ -2,11 +2,8 @@
 
 namespace MediaWiki\Extension\MetaStore;
 
-require_once( __DIR__ . '/vendor/autoload.php' );
-
 use OutputPage, Parser, Skin;
-use Embed\Embed;
-use Embed\Http\CurlDispatcher;
+use Embed\{Embed, Http\CurlDispatcher};
 
 /**
  * Class MW_EXT_Embed
