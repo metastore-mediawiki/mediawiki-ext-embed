@@ -7,7 +7,7 @@
  * @ingroup Extensions
  * @licence GNU GPL
  * @author Kitsune Solar
-  */
+ */
 
 $magicWords = [];
 
@@ -15,7 +15,7 @@ $magicWords = [];
  * English.
  *
  * @author Kitsune Solar
-  */
+ */
 
 $magicWords['en'] = [
 	'embed'       => [ 0, 'embed' ],
@@ -26,7 +26,7 @@ $magicWords['en'] = [
  * Russian.
  *
  * @author Kitsune Solar
-  */
+ */
 
 $magicWords['ru'] = [
 	'embed'       => [ 0, 'embed' ],
